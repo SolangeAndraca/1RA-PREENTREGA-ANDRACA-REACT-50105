@@ -12,3 +12,5 @@ const CartWidgetComponent = () => {
 }
 
 export default CartWidgetComponent; 
+
+//f5 y f6 pa compilar 
