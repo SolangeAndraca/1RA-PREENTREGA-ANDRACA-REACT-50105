@@ -1,8 +1,9 @@
+import Card from "react-bootstrap/Card";
 import React from "react";
-import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const ItemListContainer = ({ products }) => {
+export const ItemListContainer = ({ products }) => {
+  console.log(products)
   return (
     <div
       style={{
@@ -12,12 +13,11 @@ const ItemListContainer = ({ products }) => {
         justifyContent: "space-around",
       }}
     >
+      
+
       {products.map((product) => {
         return (
-          <Card
-            key={product.id}
-            style={{ width: "18rem", margin: 20, height: "500px" }}
-          >
+          <Card key={product.id} style={{ width: "18rem", margin: 20 }}>
             <Link to={`/item/${product.id}`}>
               <Card.Img variant="top" src={product.thumbnail} />
             </Link>
@@ -31,5 +31,3 @@ const ItemListContainer = ({ products }) => {
     </div>
   );
 };
-
-export default ItemListContainer;
